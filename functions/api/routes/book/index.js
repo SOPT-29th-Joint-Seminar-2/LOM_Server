@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-router.use('/review', require('./review'));
-router.use('/book', require('./book'));
+router.get('/:bookId', require('./bookGET'));
 
 module.exports = router;

@@ -4,4 +4,7 @@ module.exports = {
 
   NO_REVIEW: '해당 리뷰가 존재하지 않습니다',
   UPDATE_REVIEW_LIKE_SUCCESS: '좋아요 업데이트를 완료했습니다',
+  
+  // 책 정보 조회
+  READ_BOOKINFO_SUCCESS: '책 정보 조회 성공',
 };
