@@ -1,7 +1,7 @@
 const convertSnakeToCamel = require('../lib/convertSnakeToCamel');
 
-const getAllReviews = async (review) => {
-  const { rows } = await review.query(`SELECT * FROM "review" r`);
+const getAllReviews = async (client) => {
+  const { rows } = await client.query(`SELECT * FROM "review" r`);
   return convertSnakeToCamel.keysToCamel(rows);
 };
 

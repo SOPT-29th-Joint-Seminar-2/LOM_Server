@@ -3,7 +3,7 @@ const statusCode = require('../../../constants/statusCode');
 const responseMessage = require('../../../constants/responseMessage');
 const db = require('../../../db/db');
 const util = require('../../../lib/util');
-const { bookDB } = require('../../../db');
+const { bookDB, reviewDB } = require('../../../db');
 
 module.exports = async (req, res) => {
   const { bookId } = req.params;
@@ -17,13 +17,14 @@ module.exports = async (req, res) => {
   try {
     client = await db.connect(req);
 
-    const bookInfo = await bookDB.getBookById(client, bookId);
+    const bookInfoList = await bookDB.getBookById(client, bookId);
+    const reviewList = await reviewDB.getAllReviews(client);
 
-    if (!bookInfo) {
+    if (!bookInfoList) {
       return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.NO_BOOK));
     }
 
-    res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.READ_BOOKINFO_SUCCESS, bookInfo));
+    res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.READ_BOOKINFO_SUCCESS, { bookInfoList, reviewList }));
   } catch (error) {
     functions.logger.error(`[ERROR] [${req.method.toUpperCase()}] ${req.originalUrl}`, `[CONTENT] ${error}`);
     console.log(error);
