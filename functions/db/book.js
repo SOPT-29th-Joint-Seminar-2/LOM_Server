@@ -19,7 +19,7 @@ const getBestBooks = async (client) => {
     rows
   } = await client.query(
     `
-      SELECT id as bookId,book_img,book_name,author FROM "book" 
+      SELECT id as book_id,book_img,book_name,author FROM "book" ORDER BY id ASC;
       `
   );
   return convertSnakeToCamel.keysToCamel(rows);
