@@ -6,21 +6,13 @@ const getAllReviews = async (review) => {
 };
 
 const updateReviewLike = async (client, reviewId) => {
-  const { rows: updateReview } = await client.query(
+  const { rows } = await client.query(
     `
       UPDATE review
       SET like_count = like_count + 1, updated_at = now()
       WHERE id = $1
+      RETURNING *
       `,
-    [reviewId],
-  );
-
-  const { rows } = await client.query(
-    `
-    SELECT *
-    FROM review
-    WHERE id = $1
-    `,
     [reviewId],
   );
 
