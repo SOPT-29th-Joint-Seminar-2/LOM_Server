@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
     client = await db.connect(req);
 
     const bookInfo = await bookDB.getBookById(client, bookId);
-    res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.READ_BOOKINFO_SUCCESS));
+    res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.READ_BOOKINFO_SUCCESS, bookInfo));
   } catch (error) {
     functions.logger.error(`[ERROR] [${req.method.toUpperCase()}] ${req.originalUrl}`, `[CONTENT] ${error}`);
     console.log(error);
