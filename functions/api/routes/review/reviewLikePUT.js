@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
 
     const updateReview = await reviewDB.updateReviewLike(client, reviewId);
     if (!updateReview) {
-      return res.status(statusCode.NOT_FOUND).send(util.fail(statusCode.NOT_FOUND, responseMessage.NO_REVIEW));
+      return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.NO_REVIEW));
     }
 
     res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.UPDATE_REVIEW_LIKE_SUCCESS, updateReview));
