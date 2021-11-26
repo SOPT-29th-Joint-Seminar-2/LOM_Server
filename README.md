@@ -102,7 +102,12 @@ https://asia-northeast3-library-of-millie.cloudfunctions.net/api
 ## API 명세서
 
 ### 👉 [API 명세서](https://www.notion.so/storypanda/API-f5f02190ea824009b2394a273874b7a1)
+
+
 [GET][서점 베스트 10 목록 조회 API](https://www.notion.so/storypanda/10-7f9188fa83b543eb85f72afca1e5a741)
+
 [GET][책 정보 조회 페이지API](https://www.notion.so/storypanda/e0b5ba5225ba47479153b69c0d98d5b8)
+
 [POST][리뷰 좋아요 API](https://www.notion.so/storypanda/954061348ee54de6bf3c17649f1900f9)
+
 [POST][리뷰 작성 API](https://www.notion.so/storypanda/14107f0c9e054118a125a6bfadb13240)
