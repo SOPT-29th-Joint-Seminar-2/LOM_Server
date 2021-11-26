@@ -98,6 +98,8 @@ https://asia-northeast3-library-of-millie.cloudfunctions.net/api
 ## ERD Diagram
 
 [lom_erd](https://www.notion.so/storypanda/ac547dbb26ee4594af45113e8a71857e#bdd59525a65448febeebdd11e8df3482)
+![image](https://user-images.githubusercontent.com/76844556/143513753-0423ab11-cd83-447b-990d-8b98ca6938fc.png)
+
 
 ## API 명세서
 
